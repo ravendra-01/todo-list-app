@@ -16,4 +16,7 @@ Rails.application.routes.draw do
       end
     end
   end
+  namespace :task_block do
+    resources :tasks
+  end
 end

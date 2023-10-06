@@ -1,4 +1,26 @@
-<h3>User name: <%= @current_user.first_name %> <br></h3>
-<h3>User Email: <%= @current_user.email %> </h3><br> <br>
-
+<h3>Hi <%= @current_user.first_name %>, this is your task list <br></h3><br>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">Status</th>
+      <th scope="col">Mark As complete</th>
+    </tr>
+  </thead>
+  <% @current_user.tasks.each do |task| %>
+  <tbody>
+    <tr>
+      <th scope="row"><%= task.id%></th>
+      <td><%= task.title%></td>
+      <td><%= task.description%></td>
+      <td><%= task.status%></td>
+      <td><%= link_to "Click", "/task_block/tasks/#{task.id}/edit" %></td>
+    </tr>
+  </tbody>
+  <% end %>
+</table>
+<br>
+<%= link_to "Add New Task", new_task_block_task_path %><br><br>
 <%= link_to "Log out", end_session_account_block_logins_path %>

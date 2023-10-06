@@ -7,5 +7,7 @@ module AccountBlock
     validates :phone_number, :email, uniqueness: true, presence: true
     has_secure_password
     enum gender: [:male, :female, :other]
+
+    has_many :tasks, class_name: 'TaskBlock::Task', dependent: :destroy
   end
 end
