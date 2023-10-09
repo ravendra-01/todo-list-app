@@ -12,7 +12,7 @@ module AccountBlock
         flash[:notice] = "Logged in successfully"
         redirect_to "/"
       else
-        flash.now[:alert] = "There was something wrong with your login details"
+        flash[:notice] = "There was something wrong with your login details"
         render '/account_block/logins/new'
       end
     end

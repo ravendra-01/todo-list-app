@@ -16,8 +16,8 @@ module AccountBlock
         # redirect_to "/users/#{@user.id}"
         redirect_to "/"
       else
-        flash[:alert] = "New post not added!"
-        redirect_to "/"
+        flash[:errors] = @account.errors
+        redirect_to "/account_block/accounts/new"
       end
     end
 

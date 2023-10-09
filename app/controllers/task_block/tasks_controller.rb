@@ -12,8 +12,10 @@ module TaskBlock
         # redirect_to "/users/#{@user.id}"
         redirect_to "/"
       else
-        flash[:alert] = "New post not added!"
-        redirect_to "/"
+        # flash[:alert] = "New post not added!"
+        # redirect_to "/"
+        flash[:errors] = @task.errors
+        redirect_to "/task_block/tasks/new"
       end
     end
 

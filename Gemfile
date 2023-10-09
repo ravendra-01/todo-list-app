@@ -69,3 +69,4 @@ end
 
 gem 'byebug'
 gem 'jwt'
+gem 'faker'
