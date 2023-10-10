@@ -3,9 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CreateTask</title>
+  <title>UpdateTask</title>
 </head>
 <body>
-  <%= render "form" %>
+  <%= form_with scope: :task, url: "/task_block/tasks/#{@task.id}", method: :patch do |f| %>
+    <div class="mb-3">
+      <b><%= f.label :title, class: "form-label" %></b>
+      <%= f.text_field :title, class: "form-control"%>
+      <% if flash[:errors] && flash[:errors]["title"] %>
+      <% flash[:errors]["title"].each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    <% end %>
+    </div>
+    <div class="mb-3">
+      <b><%= f.label :description, class: "form-label" %></b>
+      <%= f.text_field :description, class: "form-control"%>
+      <% if flash[:errors] && flash[:errors]["description"] %>
+      <% flash[:errors]["description"].each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    <% end %>
+    </div>
+    <div class="mb-3">
+      <label class="form-label" for="user_skill_level"><b>Status</b></label>
+      <div class="form-check">
+        <input class="form-check-input" id="status_pending" name="task[status]" type="radio" value="pending">
+        <label class="form-check-label" for="status_pending">Pending</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" id="status_completed" name="task[status]" type="radio" value="completed">
+        <label class="form-check-label" for="status_completed">Completed</label>
+      </div>
+    </div>
+    <input class="btn btn-secondary" data-disable-with="Sign Up" name="commit" type="submit" value="Update Task">
+  <% end %>
 </body>
 </html>

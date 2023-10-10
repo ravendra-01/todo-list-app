@@ -13,7 +13,7 @@
   <% @current_user.tasks.each do |task| %>
   <tbody>
     <tr>
-      <th scope="row"><%= link_to task.id, "/task_block/tasks/#{task.id}/edit" %></th>
+      <th scope="row"><%= link_to task.id, edit_task_block_task_path(task) %></th>
       <td><%= task.title%></td>
       <td><%= task.description%></td>
       <td><%= task.status%></td>
