@@ -20,16 +20,16 @@ module TaskBlock
     end
 
     def edit
-      task = Task.find params[:id]
-      if task
-        task.update(status:"completed")
-        flash[:notice] = "Task successfully Updated!"
-        # redirect_to "/users/#{@user.id}"
-        redirect_to "/"
-      else
-        flash[:alert] = "Task not Updated!"
-        redirect_to "/"
-      end
+      # task = Task.find params[:id]
+      # if task
+      #   task.update(status:"completed")
+      #   flash[:notice] = "Task successfully Updated!"
+      #   # redirect_to "/users/#{@user.id}"
+      #   redirect_to "/"
+      # else
+      #   flash[:alert] = "Task not Updated!"
+      #   redirect_to "/"
+      # end
     end
 
     private

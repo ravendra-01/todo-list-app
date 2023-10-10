@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <% if flash[:notice] %>
-    <%= content_tag :h1, flash[:notice] %>
-  <% else %>
-    <%= content_tag :h1, "Please Log in" %>
-  <% end %>
-  <%= form_with scope: :login, url: account_block_logins_path, local: true do |f| %>
-    <%= f.label :email %><br>
-    <%= f.text_field :email %><br><br>
-    <%= f.label :password %><br>
-    <%= f.password_field :password %><br><br>
-    <%= f.submit "Sign In!" %><br><br>
-  <% end %>
-  <%= link_to "Sign Up", new_account_block_account_path %>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User LogIn</title>
+  </head>
+  <body>
+    <% if flash[:notice] %>
+      <%= content_tag :h1, flash[:notice] %>
+    <% else %>
+      <%= content_tag :h1, "Please Log in" %>
+    <% end %>
+    <form accept-charset="UTF-8" action="/account_block/logins" class="new_user" id="new_user" method="post">
+      <div class="mb-3">
+        <label class="form-label required" for="email"><b>Email</b></label>
+        <input class="form-control" id="email" name="login[email]" required="required" type="email">
+      </div>
+      <div class="mb-3">
+        <label class="form-label required" for="password"><b>Password</b></label>
+        <input class="form-control" id="password" name="login[password]" required="required" type="password">
+      </div>
+      <input class="btn btn-secondary" data-disable-with="Log In" name="commit" type="submit" value="LogIn">
+    </form>
+    <br>
+    <a <button class="btn btn-secondary" href= <%= new_account_block_account_path %> > SignUp</button> </a>
+  </body>
 </html>

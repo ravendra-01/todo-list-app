@@ -1,4 +1,5 @@
-<h3>Hi <%= @current_user.first_name %>, this is your task list <br></h3><br>
+<div>
+<h4 class="text-capitalize">Hi <%= @current_user.first_name %>, this is your task list : <br></h3><br>
 <table class="table table-bordered">
   <thead>
     <tr>
@@ -12,7 +13,7 @@
   <% @current_user.tasks.each do |task| %>
   <tbody>
     <tr>
-      <th scope="row"><%= task.id%></th>
+      <th scope="row"><%= link_to task.id, "/task_block/tasks/#{task.id}/edit" %></th>
       <td><%= task.title%></td>
       <td><%= task.description%></td>
       <td><%= task.status%></td>
@@ -21,6 +22,6 @@
   </tbody>
   <% end %>
 </table>
-<br>
-<%= link_to "Add New Task", new_task_block_task_path %><br><br>
-<%= link_to "Log out", end_session_account_block_logins_path %>
+<a <button class="btn btn-outline-dark my-2 my-sm-0" href= <%= new_task_block_task_path %> > Add New Task</button> </a>
+<br><br><br><br>
+</div>

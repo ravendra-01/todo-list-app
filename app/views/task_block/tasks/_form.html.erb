@@ -1,0 +1,21 @@
+<form accept-charset="UTF-8" action="/task_block/tasks" method="post">
+  <div class="mb-3">
+    <label class="form-label" for="title"><b>Title</b></label>
+    <input class="form-control" id="title" name="task[title]" type="text" value= <%= @task&.title %> >
+    <% if flash[:errors] && flash[:errors]["title"] %>
+      <% flash[:errors]["title"].each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="mb-3">
+    <label class="form-label" for="description"><b>Description</b></label>
+    <input class="form-control" id="description" name="task[description]" type="text" value= <%= @task&.description %> >
+    <% if flash[:errors] && flash[:errors]["description"] %>
+      <% flash[:errors]["description"].each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    <% end %>
+  </div>
+  <input class="btn btn-secondary" data-disable-with="Log In" name="commit" type="submit" value="Create New Task">
+</form>

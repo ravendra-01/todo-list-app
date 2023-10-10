@@ -6,59 +6,55 @@
   <title>CreateAccount</title>
 </head>
 <body>
-  <%= form_with scope: :account, url: account_block_accounts_path, local: true do |f| %>
-    <div>
-      <b><%= f.label :first_name %><br></b>
-      <%= f.text_field :first_name %><br>
+  <form accept-charset="UTF-8" action="/account_block/accounts" method="post">
+    <div class="mb-3">
+      <label class="form-label required" for="first_name"><b>First Name</b></label>
+      <input class="form-control" id="first_name" name="account[first_name]" required="required" type="first_name">
       <% if flash[:errors] && flash[:errors]["first_name"] %>
         <% flash[:errors]["first_name"].each do |message| %>
           <div><%= message %></div>
         <% end %>
       <% end %>
     </div>
-    <br>
-    <div>
-      <b><%= f.label :last_name %><br></b>
-      <%= f.text_field :last_name %><br>
+    <div class="mb-3">
+      <label class="form-label required" for="last_name"><b>Last Name</b></label>
+      <input class="form-control" id="last_name" name="account[last_name]" required="required" type="last_name">
       <% if flash[:errors] && flash[:errors]["last_name"] %>
         <% flash[:errors]["last_name"].each do |message| %>
           <div><%= message %></div>
         <% end %>
       <% end %>
     </div>
-    <br>
-    <div>
-      <b><%= f.label :email %><br></b>
-      <%= f.text_field :email %><br>
+    <div class="mb-3">
+      <label class="form-label required" for="email"><b>Email</b></label>
+      <input class="form-control" id="email" name="account[email]" required="required" type="email">
       <% if flash[:errors] && flash[:errors]["email"] %>
         <% flash[:errors]["email"].each do |message| %>
           <div><%= message %></div>
         <% end %>
       <% end %>
     </div>
-    <br>
-    <div>
-      <b><%= f.label :phone_number %><br></b>
-      <%= f.text_field :phone_number %><br>
+    <div class="mb-3">
+      <label class="form-label required" for="phone_number"><b>Phone Number</b></label>
+      <input class="form-control" id="phone_number" name="account[phone_number]" required="required" type="phone_number">
       <% if flash[:errors] && flash[:errors]["phone_number"] %>
         <% flash[:errors]["phone_number"].each do |message| %>
           <div><%= message %></div>
         <% end %>
       <% end %>
     </div>
-    <br>
-    <div>
-      <b><%= f.label :password %><br></b>
-      <%= f.password_field :password %><br>
+    <div class="mb-3">
+      <label class="form-label required" for="password"><b>Password</b></label>
+      <input class="form-control" id="password" name="account[password]" required="required" type="password">
       <% if flash[:errors] && flash[:errors]["password"] %>
         <% flash[:errors]["password"].each do |message| %>
           <div><%= message %></div>
         <% end %>
       <% end %>
     </div>
-    <br>
-    <%= f.submit "Sign Up!" %><br><br>
-  <% end %>
-  <%= link_to "Sign in", new_account_block_login_path %>
+    <input class="btn btn-secondary" data-disable-with="Sign Up" name="commit" type="submit" value="SignUp">
+  </form>
+  <br>
+  <a <button class="btn btn-secondary" href= <%= new_account_block_login_path %> > LogIn</button> </a>
 </body>
 </html>
