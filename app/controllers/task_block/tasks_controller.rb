@@ -22,7 +22,6 @@ module TaskBlock
     end
 
     def update
-      byebug
       if @task.update(update_task_params)
         flash[:notice] = "Task successfully Updated!"
         redirect_to "/"
