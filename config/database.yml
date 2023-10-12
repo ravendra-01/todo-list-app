@@ -86,4 +86,4 @@ production:
   port: 5432
   username: postgres
   password: rails
-  host: 15.206.194.255
+  host: 13.126.211.35
