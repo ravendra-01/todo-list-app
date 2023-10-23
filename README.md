@@ -1,24 +1,18 @@
-# README
+# Project Name: ToDo List
+    
+# This template currently requires:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Rails 7.1
+* Ruby 3.2.2 or newer
+* PostgreSQL
+* Node 18+, and Yarn 1.x
 
-Things you may want to cover  :
+# Setup
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Install gems: 
+    bundle install
+* DB Setup:
+    rails db:create
+    rails db:migrate
+* Run a server: 
+    rails s
