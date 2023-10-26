@@ -8,12 +8,12 @@ module AccountBlock
       user = Account.find_by(email: params[:login][:email])
       if user && user.authenticate(params[:login][:password])
         session[:user_id] = user.id
-        token = JsonWebToken.encode(user.id)
+        # token = JsonWebToken.encode(user.id)
         flash[:notice] = "Logged in successfully"
         redirect_to "/"
       else
-        flash[:notice] = "There was something wrong with your login details"
-        render '/account_block/logins/new'
+        flash[:notice] = "There was something wrong with your login details, please try again"
+        redirect_to "/account_block/logins/new"
       end
     end
 

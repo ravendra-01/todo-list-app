@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+
+ #main {
+  margin-left: 20%;
+  width: 60%;
+  height: 740px;
+ }
+
+ .contact-table-scroll{
+  overflow-y: scroll;
+  height: 660px;
+ }
+
+ th, td {
+  text-align: center;
+ }

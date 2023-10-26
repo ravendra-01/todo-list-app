@@ -1,27 +1,30 @@
-<div>
-<h4 class="text-capitalize">Hi <%= @current_user.first_name %>, this is your task list : <br></h3><br>
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">Title</th>
-      <th scope="col">Description</th>
-      <th scope="col">Status</th>
-      <th scope="col">Mark As complete</th>
-    </tr>
-  </thead>
-  <% @current_user.tasks.each do |task| %>
-  <tbody>
-    <tr>
-      <th scope="row"><%= link_to task.id, edit_task_block_task_path(task) %></th>
-      <td><%= task.title%></td>
-      <td><%= task.description%></td>
-      <td><%= task.status%></td>
-      <td><%= link_to "Click", "/task_block/tasks/#{task.id}/edit" %></td>
-    </tr>
-  </tbody>
-  <% end %>
-</table>
-<a <button class="btn btn-outline-dark my-2 my-sm-0" href= <%= new_task_block_task_path %> > Add New Task</button> </a>
-<br><br><br><br>
+<div id="contact-table" class="mt-2">
+  <div>
+    <h4 class="text-capitalize">Hi <%= @current_user.first_name %>, this is your task list :</h3>
+  </div>
+  <div class="contact-table-scroll mt-2 border rounded">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Title</th>
+          <th scope="col">Description</th>
+          <th scope="col">Status</th>
+          <th scope="col">Mark As complete</th>
+        </tr>
+      </thead>
+      <% @current_user.tasks.each do |task| %>
+      <tbody>
+        <tr>
+          <td><%= task.title%></td>
+          <td><%= task.description%></td>
+          <td><%= task.status%></td>
+          <td><%= link_to "Update", "/task_block/tasks/#{task.id}/edit" %></td>
+        </tr>
+      </tbody>
+      <% end %>
+    </table>
+  </div>
+  <div class="mt-2">
+    <a <button class="btn btn-outline-dark my-2 my-sm-0" href= <%= new_task_block_task_path %> > Add New Task</button> </a>
+  </div>
 </div>
