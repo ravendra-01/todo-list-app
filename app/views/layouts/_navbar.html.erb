@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg" style="background-color: #d4574e;">
+<nav class="navbar navbar-expand-lg border rounded bg-secondary">
   <div class="container-fluid">
-    <a class="navbar-brand" href=<%= root_path %> ><b>ToDo Bot</b></a>
+    <a class="navbar-brand text-white" href=<%= root_path %> ><b>ToDo Bot</b></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -8,7 +8,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href=<%= root_path %> >Home</a>
+            <a class="nav-link active text-white" aria-current="page" href=<%= root_path %> >Home</a>
           </li>
         </ul>
       </div>
@@ -17,14 +17,10 @@
       <ul class="navbar-nav">
         <% if @current_user %>
           <li class="nav-item">
-            <a class="nav-link active text-capitalize" href="#"><b>User: <%= @current_user.first_name+" "+@current_user.last_name%></b></a>
+            <a class="nav-link active text-capitalize text-white" href="#"><b>User: <%= @current_user.first_name+" "+@current_user.last_name%></b></a>
           </li>
           <li class="nav-item">
-            <a <button class="btn btn-outline-dark my-2 my-sm-0" href= <%= end_session_account_block_logins_path %> > SignOut</button> </a>
-        </li>
-        <% else %>
-          <li class="nav-item">
-            <a <button class="btn btn-outline-success my-2 my-sm-0" href= <%= new_account_block_login_path %> > SignIn</button> </a>
+            <a <button class="btn btn-outline-danger text-white border border-white" href= <%= end_session_account_block_logins_path %> > SignOut</button> </a>
           </li>
         <% end %>
       </ul>

@@ -31,6 +31,14 @@ module TaskBlock
       end
     end
 
+    def destroy
+      task = Task.find(params[:id])
+      if task.destroy
+        flash[:notice] = "Task successfully deleted!"
+        redirect_to "/"
+      end
+    end
+
     private
 
     def task_params
