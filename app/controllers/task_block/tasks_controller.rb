@@ -39,6 +39,23 @@ module TaskBlock
       end
     end
 
+    def trashed_tasks
+      @trashed_tasks = current_user.tasks.only_deleted
+    end
+
+    def restore_task
+      TaskBlock::Task.restore(params[:id])
+      redirect_to "/task_block/tasks/trashed_tasks"
+    end
+
+    def permanent_destroy
+      task = TaskBlock::Task.with_deleted.find(params[:id])
+      if task.really_destroy!
+        flash[:notice] = "Task successfully deleted!"
+        redirect_to "/task_block/tasks/trashed_tasks"
+      end
+    end
+
     private
 
     def task_params

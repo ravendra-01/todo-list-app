@@ -17,6 +17,10 @@ Rails.application.routes.draw do
     end
   end
   namespace :task_block do
-    resources :tasks
+    resources :tasks do
+      get :trashed_tasks, on: :collection
+      patch :restore_task, on: :member
+      delete :permanent_destroy, on: :member
+    end
   end
 end

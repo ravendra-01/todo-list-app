@@ -70,3 +70,4 @@ end
 gem 'byebug'
 gem 'jwt'
 gem 'faker'
+gem "paranoia", "~> 2.2"
