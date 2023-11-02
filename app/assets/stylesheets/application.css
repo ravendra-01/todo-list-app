@@ -49,3 +49,7 @@
     overflow-y: scroll;
     height: 720px; 
  }
+
+ #newTask {
+   height: 720px;
+ }

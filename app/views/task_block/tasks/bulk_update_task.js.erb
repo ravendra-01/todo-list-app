@@ -1,0 +1,4 @@
+<% params[:task_ids].each do |task_id|%>
+    $("#task_row_<%= task_id %>").remove();
+<% end%>
+$('#markCompleted').hide();

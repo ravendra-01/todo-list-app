@@ -56,6 +56,10 @@ module TaskBlock
       end
     end
 
+    def bulk_update_task
+     Task.where(id: params[:task_ids]).update_all(status: "completed")
+    end
+
     private
 
     def task_params
