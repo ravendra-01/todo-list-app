@@ -56,8 +56,20 @@ module TaskBlock
       end
     end
 
-    def bulk_update_task
-     Task.where(id: params[:task_ids]).update_all(status: "completed")
+    # def bulk_update_task
+    #  Task.where(id: params[:task_ids]).update_all(status: "completed")
+    # end
+
+    def update_task
+      Task.find(params[:task_id]).update(status: "completed")
+    end
+
+    def pending_tasks
+      @pending_tasks = current_user.tasks.where(status: "pending")
+    end
+
+    def completed_tasks
+      @completed_tasks = current_user.tasks.where(status: "completed")
     end
 
     private

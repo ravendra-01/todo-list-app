@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-  root "account_block/accounts#index"
+  # root "account_block/accounts#index"
+  root "task_block/tasks#pending_tasks"
 
   namespace :account_block do
     resources :accounts
@@ -19,7 +20,10 @@ Rails.application.routes.draw do
   namespace :task_block do
     resources :tasks do
       get :trashed_tasks, on: :collection
-      patch :bulk_update_task, on: :collection
+      get :pending_tasks, on: :collection
+      get :completed_tasks, on: :collection
+      # patch :bulk_update_task, on: :collection
+      patch :update_task, on: :collection
       patch :restore_task, on: :member
       delete :permanent_destroy, on: :member
     end
