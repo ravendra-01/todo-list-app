@@ -71,3 +71,4 @@ gem 'byebug'
 gem 'jwt'
 gem 'faker'
 gem "paranoia", "~> 2.2"
+gem 'kaminari'

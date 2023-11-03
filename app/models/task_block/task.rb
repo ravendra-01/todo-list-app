@@ -5,6 +5,7 @@ module TaskBlock
 
     validates :title, :description, presence: true
     enum status: [:pending, :completed]
+    enum priority: [:high, :medium, :low]
 
     belongs_to :account, class_name: 'AccountBlock::Account'
   end

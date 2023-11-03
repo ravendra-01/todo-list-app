@@ -3,10 +3,9 @@
     <div class="ms-2 mt-2">
       <h4>Completed Task List :</h3>
     </div>
-    <% @task_list = @completed_tasks %>
     <div class="d-flex flex-column rounded border border-1">
-      <div class="trashed-table-scroll">
-        <% @task_list.each do |task| %>
+      <div class="completed-table-scroll">
+        <% @completed_tasks.each do |task| %>
           <div class="d-flex flex-row rounded border border-2 mt-2 w-75 ms-5" style="height: 55px; background-color: rgba(0,0,255,.1)">
             <div class="d-flex flex-column w-75">
               <div class="ps-2 h6" style="font-size: 20px;"><%= task.title%></div>
@@ -32,6 +31,9 @@
             </div>
           </div>
         <% end %>
+      </div>
+      <div class="ms-5 mt-2 mb-2">
+        <%= paginate @completed_tasks %>
       </div>
     </div>
   </div>
