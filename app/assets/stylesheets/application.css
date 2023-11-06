@@ -14,8 +14,8 @@
  *= require_self
  */
  #mainContainer {
-  width: 70%;
-  margin-left: 15%;
+  width: 100%;
+  /* margin-left: 15%; */
  }
 
  #main {

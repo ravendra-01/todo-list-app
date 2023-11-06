@@ -76,6 +76,14 @@ module TaskBlock
       @pending_tasks = current_user.tasks.where(status: "pending").order(created_at: :desc)
     end
 
+    def today_tasks
+      @today_tasks = current_user.tasks.where(status: "pending", planned_date:  Date.today)
+    end
+
+    def upcoming_tasks
+      @upcoming_tasks = current_user.tasks.where(status: "pending").where('planned_date > ?', Date.today)
+    end
+
     def completed_tasks
       tasks = current_user.tasks.where(status: "completed").order(updated_at: :desc)
       @completed_tasks = tasks.page(params[:page]).per(10)
