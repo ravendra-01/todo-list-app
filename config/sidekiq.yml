@@ -1,0 +1,6 @@
+:scheduler:
+  :schedule:
+    notification:
+      cron: "* * * * *"
+      class: "NotificationScheduler"
+      queue: "default"

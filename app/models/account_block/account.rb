@@ -9,5 +9,6 @@ module AccountBlock
     enum gender: [:male, :female, :other]
 
     has_many :tasks, class_name: 'TaskBlock::Task', dependent: :destroy
+    has_many :notifications, class_name: 'NotificationBlock::Notification', dependent: :destroy
   end
 end
