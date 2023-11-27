@@ -94,6 +94,11 @@ module TaskBlock
       @notifications = current_user.notifications
     end
 
+    def show_notification
+      NotificationBlock::Notification.find(params[:id]).update(is_read: true, read_at: Time.now)
+      redirect_to "/task_block/tasks/notification"
+    end
+
     private
 
     def task_params

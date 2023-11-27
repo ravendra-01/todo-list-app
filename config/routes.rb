@@ -32,6 +32,7 @@ Rails.application.routes.draw do
         patch :update_task
         get :notification
       end
+      get :show_notification, on: :member
       patch :restore_task, on: :member
       delete :permanent_destroy, on: :member
     end

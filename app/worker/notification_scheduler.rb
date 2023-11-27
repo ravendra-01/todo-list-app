@@ -9,7 +9,7 @@ class NotificationScheduler
       pending_task = user.tasks.where(planned_date: Date.today, status: "pending")
       notification = NotificationBlock::Notification.new(
               headings: "You have #{pending_task.count} pending tasks for the day",
-              contents: "",
+              contents: "Please Complete your pending tasks by today",
               account_id: user.id
               )
       notification.save

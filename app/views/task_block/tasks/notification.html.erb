@@ -1,0 +1,32 @@
+<section class="section-50">
+  <div class="container">
+    <h3 class="m-b-50 heading-line">Notifications</h3>
+    <div class="notification-ui_dd-content">
+      <% @notifications.each do |notification| %>
+        <% unless notification.is_read %>
+          <a href= <%= show_notification_task_block_task_path(notification) %> >
+            <div class="notification-list notification-list--unread">
+              <div class="notification-list_content">
+                <div class="notification-list_detail">
+                  <p><b><%= notification.headings %></b></p>
+                  <p class="text-muted"><%= notification.contents %></p>
+                  <p class="text-muted"><small>Created at: <%= notification.created_at %></small></p>
+                </div>
+              </div>
+            </div>
+          </a>
+        <% else %>
+          <div class="notification-list">
+            <div class="notification-list_content">
+              <div class="notification-list_detail">
+                <p><b><%= notification.headings %></b></p>
+                <p class="text-muted"><%= notification.contents %></p>
+                <p class="text-muted"><small>Read at: <%= notification.read_at %></small></p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</section>
