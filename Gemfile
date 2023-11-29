@@ -74,3 +74,6 @@ gem "paranoia", "~> 2.2"
 gem 'kaminari'
 gem "sidekiq", "~> 7.2"
 gem "sidekiq-scheduler", "~> 5.0"
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'rails_sortable'

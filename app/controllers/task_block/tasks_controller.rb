@@ -73,7 +73,8 @@ module TaskBlock
     end
 
     def pending_tasks
-      @pending_tasks = current_user.tasks.where(status: "pending").order(created_at: :desc)
+      # @pending_tasks = current_user.tasks.where(status: "pending").order(created_at: :desc)
+      @pending_tasks = current_user.tasks.where(status: "pending").order(:sort).all
     end
 
     def today_tasks
