@@ -77,3 +77,5 @@ gem "sidekiq-scheduler", "~> 5.0"
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'rails_sortable'
+
+gem 'cssbundling-rails'

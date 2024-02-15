@@ -71,3 +71,4 @@ $(document).ready(function() {
         };
     });
 });
+import * as bootstrap from "bootstrap"
