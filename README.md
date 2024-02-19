@@ -44,9 +44,9 @@ And now you can visit the site with the URL http://localhost:3000
 
 #### Features
 
-- Manage daily tasks
-- Implemented soft delete to restore tasks
-- Background job for notification
+- Manage daily tasks.
+- Implemented soft delete to restore tasks.
+- Background job for notification.
 
 #### Screenshots
 
