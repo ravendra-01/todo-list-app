@@ -4,6 +4,7 @@ module TaskBlock
     before_action :get_task, only: [:edit, :update, :show]
 
     def new
+      @task = Task.new
     end
 
     def create
